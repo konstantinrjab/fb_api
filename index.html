@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <title>API</title>
+</head>
+<body class="bg-light" style="font-size: 1em;">
+<div class="container">
+  <div class="row pb-5">
+    <div class="col-12">
+      <h1 class="text-center pt-3 pb-3">API</h1>
+      <h3 class="text-center"><a href="documentation.php">Documentation</a></h3>
+      <div class="pb-2">
+        <h4>First of all get a token from the right window:</h4>
+        <label for="input-login">Login: </label>
+        <input type="text" id="input-login" value="user">
+        <label for="input-password">Password: </label>
+        <input type="password" id="input-password" value="user">
+        <button class="btn btn-danger" onclick="sendLogin()">Get token</button>
+      </div>
+      <div>
+        <h4>Insert your token here: <input class="d-inline" type="text" id="token"> and go on</h4>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <h4 class="pt-3">Get 2 random girls:</h4>
+      <button class="btn btn-primary" onclick="getTwoRandomGirls()">Get girls</button>
+      <h4 class="pt-3">Get all records:</h4>
+      <button class="btn btn-primary" onclick="getAllRecords()">Get all records</button>
+
+      <h4 class="pt-3">Get by parameters:</h4>
+      <label class="w-25" for="specified-id">user_id: </label>
+      <input type="text" id="specified-id"><br>
+      <label class="w-25" for="specified-status">Status: </label>
+      <input type="text" id="specified-status" placeholder="success or fail"><br>
+      <label class="w-25" for="specified-gender">Gender: </label>
+      <input type="text" id="specified-gender" placeholder="male or female"><br>
+      <label class="w-25" for="specified-order">Order by: </label>
+      <input type="text" id="specified-order" placeholder="rating, gender etc"><br>
+      <label class="w-25" for="specified-limit">Limit: </label>
+      <input type="text" id="specified-limit" placeholder="number of members"><br>
+      <label class="w-25" for="specified-offset">Offset: </label>
+      <input type="text" id="specified-offset" placeholder="exclude first ... members"><br>
+      <button class="btn btn-primary mt-2" onclick="getSpecified()">Get by parameters</button>
+
+      <h4 class="pt-3">Update rating:</h4>
+      <label class="w-25" for="update-rating-id">user_id: </label>
+      <input type="text" id="update-rating-id"><br>
+      <label class="w-25" for="update-rating-rating">Rating: </label>
+      <input type="text" id="update-rating-rating"><br>
+      <button class="btn btn-primary mt-2" onclick="updateRating()">Update rating</button>
+
+      <h4 class="pt-3">Add member:</h4>
+      <label class="w-25" for="add-member-name">Full name: </label>
+      <input type="text" id="add-member-name"><br>
+      <label class="w-25" for="add-member-id">User_id: </label>
+      <input type="text" id="add-member-id"><br>
+      <button class="btn btn-primary mt-2" onclick="addMember()">Add member</button>
+
+    </div>
+
+    <div class="col-sm-6 pt-3 mb-4">
+      <h4>
+        <label for="response">Response from the server: </label>
+      </h4>
+      <p>Response code: <span id="response-code"></span></p>
+      <textarea class="w-100 h-100" name="response" id="response"></textarea>
+    </div>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
